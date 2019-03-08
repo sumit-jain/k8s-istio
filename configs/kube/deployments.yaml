@@ -97,7 +97,7 @@ metadata:
   name: backend-prod
 spec:
   replicas: 1
-    selector:
+  selector:
     matchLabels:
       app: backend
   template:
