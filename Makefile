@@ -107,6 +107,9 @@ run-standalone:
 expose-standalone:
 	kubectl expose deployment demo --target-port=3000 --port=80 --type=LoadBalancer --namespace demo
 
+clean-standalone:
+	kubectl delete namespace demo
+
 get-standalone:
 	kubectl get deployment --namespace demo
 	kubectl get pods --namespace demo
