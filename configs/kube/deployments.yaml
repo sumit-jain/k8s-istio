@@ -104,4 +104,4 @@ spec:
         - name: SERVICE_NAME
           value: "backend-prod"
         - name: UPSTREAM_URI
-          value: "http://worldclockapi.com/api/json/utc/now"
+          value: "http://worldtimeapi.org/api/ip"
