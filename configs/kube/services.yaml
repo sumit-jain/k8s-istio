@@ -23,6 +23,7 @@ spec:
   - port: 80
     targetPort: 3000
     name: http
+  type: LoadBalancer
   - port: 9464
     targetPort: 9464
     name: prometheus
