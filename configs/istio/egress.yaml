@@ -16,7 +16,7 @@ metadata:
   name: jsontime
 spec:
   hosts:
-  - worldclockapi.com
+  - worldtimeapi.org
   ports:
   - number: 80
     name: http
