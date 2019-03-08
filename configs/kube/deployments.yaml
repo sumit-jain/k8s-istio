@@ -10,12 +10,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-prod
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
   template:
     metadata:
       labels:
@@ -34,12 +37,15 @@ spec:
         - name: UPSTREAM_URI
           value: "http://middleware/"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: middleware-prod
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: middleware
   template:
     metadata:
       labels:
@@ -58,12 +64,15 @@ spec:
         - name: UPSTREAM_URI
           value: "http://backend/"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: middleware-canary
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: middleware
   template:
     metadata:
       labels:
@@ -82,12 +91,15 @@ spec:
         - name: UPSTREAM_URI
           value: "http://backend/"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-prod
 spec:
   replicas: 1
+    selector:
+    matchLabels:
+      app: backend
   template:
     metadata:
       labels:
