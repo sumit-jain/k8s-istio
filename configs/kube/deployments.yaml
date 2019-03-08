@@ -19,6 +19,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
+      version: prod
   template:
     metadata:
       labels:
@@ -46,6 +47,7 @@ spec:
   selector:
     matchLabels:
       app: middleware
+      version: prod
   template:
     metadata:
       labels:
@@ -73,6 +75,7 @@ spec:
   selector:
     matchLabels:
       app: middleware
+      version: canary
   template:
     metadata:
       labels:
@@ -100,6 +103,7 @@ spec:
   selector:
     matchLabels:
       app: backend
+      version: prod
   template:
     metadata:
       labels:
